@@ -6,4 +6,4 @@ A regex analysis by Donald Bull of the regular expression to evaluate Matching a
 /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 ```
 
-I attempt to breakdown this expression and the components used in the search for matches.
+I attempt to breakdown this expression and the components used in the search for matches. There is an accompanying Gist that goes into more details on this analysis.
