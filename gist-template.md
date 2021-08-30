@@ -1,16 +1,16 @@
 # Regular "Reg(gie)Ex" Expressions
 
-This is my take on regex, a purposeful tool that confuses most who know a thing a bout it. Hopefully, my view can demystify the string of characters that gives the user a tool to create patterns to match, locate and manage text.
+Regex are purposeful tools that confuses most who know a thing about it. With some analysis, you can demystify the string of characters that gives the user a tool to create patterns to match, locate and manage text.
 
 ## Summary
 
-This is a brief summary of the search pattern used in a body of text. I will be evaluating the regualar expression for Matching a URL.
+This brief summary of the search pattern used to evaluate the regualar expression for Matching a URL.
 
 ```
 /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 ```
 
-With an interest in server side coding this seems like a useful tool that I will need to use more than once as in my lifetime. Regular expressions are useful because they provide more flexible and powerful pattern matching than you can achieve with wildcards.
+Not just an interesting server side coding tool, Regular Expressions seem like something you will need to use more than once as in my lifetime. They are useful because they give you more flexible and powerful pattern matching than you can achieve with wildcards.
 
 ## Table of Contents
 
@@ -29,13 +29,13 @@ With an interest in server side coding this seems like a useful tool that I will
 
 ### Anchors
 
-Also known as "atomic zero-width assertions", these special characters specify a position in the string where a match must occur. The regular expression engine looks for a match in the specified position only. The caret at the start of this expression is one example of an anchor.
+Also known as "atomic zero-width assertions", these special characters show the position in the string where a match must occur. The regular expression engine looks for a match in the specified position only. The caret(^) at the start of this expression is one example of an anchor.
 
 ```
 ([\/\w \.-]*)*\/?$/
 ```
 
-The "$" towards the end of the expression signifies the matches must happen at the end of a string or line. Another possibility is to use the "\n" flag woule indicate a new line being formed/evaluated.
+The "$" towards the end of the expression signifies the matches must happen at the end of a string or line. Another option one can use the "\n" flag to indicate a new line.
 
 ### Quantifiers
 
@@ -58,7 +58,7 @@ The first use of a quantifier in the Matching a URL expression we are evaluating
 
 ### OR Operator
 
-You can the "|" (OR operator) to provide as many terms as desired, as long as they are separated with the Vertical bar character. This character separates terms contained within each group. The expression we are evaluating for matching a URL does not contain a vertical bar.
+You can use the "|" (OR operator) to chain terms together, all separated with the Vertical bar character. The OR Operator separates terms contained within each group. The expression evaluating matching a URL does not contain a vertical bar.
 
 ### Character Classes
 
@@ -66,9 +66,11 @@ You can the "|" (OR operator) to provide as many terms as desired, as long as th
 
 - Square brackets[ ] - represents exactly one character
 
-  - [abc] a or b or c
-  - [^abc] any character _except_ a, b, or c, (negation)
-  - [a-zA-Z] a through z or A through Z, (range)
+  There are a couple instances of the square brackets used in this expression.
+
+```
+[\da-z\.-]
+```
 
 - Back Slash \ - The following characters need to be preceded by a backslash if they are to be used without special meaning:
   \ . $ \* ? + [ ] ( ) | { }
@@ -112,10 +114,10 @@ The third capturing group ([a-z\.]{2,6}) shows a single matching character from 
 The square brackets create a list of possible matches. Inside the square brackets of the Matching a URL example, the fourth capuring group had the following:
 
 ```
-([\/\w \.-]*)
+[\da-z\.-]            [a-z\.]              ([\/\w \.-]*)
 ```
 
-This can be broken down to a separator forward slash that is escaped, meaning the match will appear as it does in the expression. This is followed by the "\w" indicating any word will match this part of the expression. Followed by a space, the an escaped period. The hyphen that follows will be strictly matched as well. The wild card character prior to the closing parenthesis signifies this portion of the expressiong will be matched as many times as necessary to find all of the matches and is considered greedy.
+The final snippet has a separator forward slash that is escaped, meaning the match will appear exactly as it does in the expression. This is followed by the "\w" indicating any word will match this part of the expression. Followed by a space, the an escaped period. The hyphen that follows will be strictly matched as well. The wild card character prior to the closing parenthesis signifies this portion of the expressiong will be matched as many times as necessary to find all of the matches and is considered greedy.
 
 ### Greedy and Lazy Match
 
@@ -133,11 +135,11 @@ A lazy mode of qualifiers is used by the "?". When the question mark is used aft
 (https?:\/\/)
 ```
 
-the "?" is requiring the search for https only happen once. This makes since, as that combination would not be repeated in a valid URL.
+The "?" is requiring the search for https only happen once. This makes since, as that combination would not be repeated in a valid URL.
 
 ### Back-references
 
-The way you can check each group of parentheses to determin what is captured by the text matched by the regex inside them into a numbered group that can be reused with a numbered backreference. In some instances the backreferebces are named to make searching for them easier.
+The way you can check each group of parentheses to determin what is captured by the text matched by the regex inside them into a numbered group that can be reused with a numbered backreference. In some of these cases the backreferebces are named to make searching for them easier.
 
 ## Resources
 
